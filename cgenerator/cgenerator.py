@@ -1,5 +1,7 @@
 ''' cgenerator  '''
 
+#!/usr/bin/env
+
 import sys
 import time
 import os
@@ -23,17 +25,26 @@ def generate_file(input_file_path, out_file_path):
             outfile.write(line)
 
 
-def generate(entity_name, output_dir, custom=False):
+def generate(entity_name, output_dir, custom, types):
     set_replacements(entity_name, custom)
+    if output_dir[-1] != '/' or output_dir[-1] != '\\':
+        output_dir += '/'
+    types_list = types.split(',')
     short_name = entity_name.replace("struct ", "")
-    generate_file(templates_storage + 'clist.c.tmp',
-                  output_dir + 'clist_' + short_name + '.c')
-    generate_file(templates_storage + 'clist.h.tmp',
-                  output_dir + 'clist_' + short_name + '.h')
-    generate_file(templates_storage + 'cvector.c.tmp',
-                  output_dir + 'cvector_' + short_name + '.c')
-    generate_file(templates_storage + 'cvector.h.tmp',
-                  output_dir + 'cvector_' + short_name + '.h')
+    for type_item in types_list:
+        if type_item == "list":
+            generate_file(templates_storage + 'clist.c.tmp',
+                          output_dir + 'clist_' + short_name + '.c')
+            generate_file(templates_storage + 'clist.h.tmp',
+                          output_dir + 'clist_' + short_name + '.h')
+        elif type_item == "vector":
+            generate_file(templates_storage + 'cvector.c.tmp',
+                          output_dir + 'cvector_' + short_name + '.c')
+            generate_file(templates_storage + 'cvector.h.tmp',
+                          output_dir + 'cvector_' + short_name + '.h')
+        else:
+            print "Unkrow type: " + type_item
+            sys.exit(-1)
     generate_file(templates_storage + 'ctypes.h.tmp', output_dir + 'ctypes.h')
     generate_file(templates_storage + 'entity.h.tmp',
                   output_dir + 'entity_' + short_name + '.h')
@@ -56,14 +67,14 @@ def set_replacements(entity_name, custom):
 
 
 def main():
-    if len(sys.argv) == 4:
-        generate(sys.argv[1], sys.argv[2], sys.argv[3])
+    if len(sys.argv) == 5:
+        generate(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
         print "Done."
     else:
         app_name = os.path.basename(sys.argv[0]).replace("-script", "")
-        print app_name + " <type name> <output folder> <is custom>"
-        print "Example 1: " + app_name + " uint ../src/ False"
-        print "Example 2: " + app_name + " 'struct matrix' ./source/ True"
+        print app_name + " <type name> <output folder> <is custom> <containers>"
+        print "Example 1: " + app_name + " uint ../src/ False list,vector"
+        print "Example 2: " + app_name + " 'struct matrix' ./source/ True vector"
 
 
 if __name__ == "__main__":
