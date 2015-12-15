@@ -6,6 +6,8 @@
 extern "C" {
 #endif
 
+#include "ctypes.h"
+
 /*
 This for implememtation your entity
 code.

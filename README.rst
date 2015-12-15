@@ -36,7 +36,7 @@ Usage
 
     cgenerator <type name> <output folder> <is custom>
     cgenerator uint ../src/ False
-    cgenerator  'struct matrix' ./source/ True
+    cgenerator 'struct matrix' ./source/ True
 
 .. _license:
 
