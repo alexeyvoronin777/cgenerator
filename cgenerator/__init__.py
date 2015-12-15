@@ -2,7 +2,7 @@
 
 import cgenerator
 
-__version__ = "0.1.1"
+__version__ = "0.1.1a"
 __project__ = "cgenerator"
 __author__ = "Alexey Voronin"
 __author_email__ = "alexeyvoronin777@gmail.com"
