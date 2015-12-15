@@ -3,7 +3,7 @@ C container generator
 
 .. _description:
 
-C container generator -- Short description.
+C container generator.
 
 .. _badges:
 
