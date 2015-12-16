@@ -19,11 +19,17 @@ setup(name='cgenerator',
       url='https://github.com/alexeyvoronin777/cgenerator',
       license=read_file('LICENSE.txt'),
       packages=find_packages(),
-          long_description=read_file('README.rst'),
+      long_description=read_file('README.rst'),
       zip_safe=False,
-          include_package_data=True,
-          entry_points={
+      include_package_data=True,
+      entry_points={
           'console_scripts':
           ['cgenerator = cgenerator:command_line']
-      }
+      },
+		extras_require={
+			'build_sphinx'=[ 
+				'sphinx'
+			]
+		},
+	  install_requires=[]
       )

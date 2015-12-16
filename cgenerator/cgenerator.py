@@ -1,4 +1,9 @@
-''' cgenerator  '''
+""" cgenerator
+~~~~~~~~~~
+The module implements container generation.
+:copyright: 2016 by Alexey Voronin.
+:license: GPL, see LICENSE for more details.
+"""
 
 #!/usr/bin/env
 
