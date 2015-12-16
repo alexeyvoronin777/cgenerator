@@ -26,10 +26,5 @@ setup(name='cgenerator',
           'console_scripts':
           ['cgenerator = cgenerator:command_line']
       },
-		extras_require={
-			'build_sphinx'=[ 
-				'sphinx'
-			]
-		},
-	  install_requires=[]
+	  install_requires=['sphinx']
       )
