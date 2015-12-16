@@ -11,7 +11,7 @@ How to use
 	cgenerator 'struct matrix' ./source/ True list
 	
 **type name** - C type of entity. It's can be standard type or custom(struct, union and etc.).
-	
+
 **output folder** - Output folder for generated files(*.c, *.h).
 
 **is custom** - can be True or False. 
