@@ -45,7 +45,11 @@ License
 
 Licensed under a `GPL license`_.
 
+Online documentation `Docs`_.
+
 .. _links:
 
 .. _GPL license: https://www.gnu.org/licenses/gpl-2.0.txt
-.. _Documentation: http://cgenerator.readthedocs.org/en/latest/
+
+.. _Docs: http://cgenerator.readthedocs.org/en/latest/
+
