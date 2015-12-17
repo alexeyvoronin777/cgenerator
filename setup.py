@@ -26,5 +26,7 @@ setup(name='cgenerator',
           'console_scripts':
           ['cgenerator = cgenerator:command_line']
       },
-	  install_requires=['sphinx']
+      install_requires=['sphinx'],
+      tests_require=['pytest'],
+	  test_suite='tests',
       )
