@@ -7,7 +7,7 @@ The module implements objects generation.
 
 import cgenerator
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 __project__ = "cgenerator"
 __author__ = "Alexey Voronin"
 __author_email__ = "alexeyvoronin777@gmail.com"
