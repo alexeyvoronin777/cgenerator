@@ -35,7 +35,7 @@ def generate(entity_name, output_dir, custom, types):
     if output_dir[-1] != '/' or output_dir[-1] != '\\':
         output_dir += '/'
     types_list = types.split(',')
-    short_name = entity_name.replace("struct ", "")
+    short_name = entity_name.replace("struct ", "").replace(" ", "_")
     for type_item in types_list:
         if type_item == "list":
             generate_file(templates_storage() + 'clist.c.tmp',
@@ -52,9 +52,9 @@ def generate(entity_name, output_dir, custom, types):
             sys.exit(-1)
     generate_file(templates_storage() + 'ctypes.h.tmp', output_dir + 'ctypes.h')
     generate_file(templates_storage() + 'entity.h.tmp',
-                  output_dir + 'entity_' + short_name + '.h')
+                  output_dir + 'entity_' + short_name + '.h', replacements)
     generate_file(templates_storage() + 'entity.c.tmp',
-                  output_dir + 'entity_' + short_name + '.c')
+                  output_dir + 'entity_' + short_name + '.c', replacements)
 
 
 def get_replacements(entity_name, custom=False):
