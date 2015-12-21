@@ -1,5 +1,5 @@
-C container generator
-######################
+C container generator(BETA)
+###########################
 
 .. _description:
 
