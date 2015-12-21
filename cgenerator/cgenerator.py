@@ -50,7 +50,7 @@ def generate(entity_name, output_dir, custom, types):
         else:
             print "Unkrow type: " + type_item
             sys.exit(-1)
-    generate_file(templates_storage() + 'ctypes.h.tmp', output_dir + 'ctypes.h')
+    generate_file(templates_storage() + 'ctypes.h.tmp', output_dir + 'ctypes.h', replacements)
     generate_file(templates_storage() + 'entity.h.tmp',
                   output_dir + 'entity_' + short_name + '.h', replacements)
     generate_file(templates_storage() + 'entity.c.tmp',
