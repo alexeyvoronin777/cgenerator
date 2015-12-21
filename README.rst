@@ -34,9 +34,9 @@ Usage
 
 ::
 
-    cgenerator <type name> <output folder> <is custom>
-    cgenerator uint ../src/ False
-    cgenerator 'struct matrix' ./source/ True
+    cgenerator <type name> <output folder> <is custom> <containers>
+    cgenerator uint ../src/ False list,vector
+    cgenerator 'struct matrix' ./source/ True vector
 
 .. _license:
 
